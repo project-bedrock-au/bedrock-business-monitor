@@ -1,0 +1,28 @@
+{
+  "name": "bedrock-business-monitor",
+  "version": "1.0.0",
+  "description": "Automated discovery, triage, and Slack digest for Australian business-for-sale marketplaces.",
+  "main": "src/index.ts",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "type-check": "tsc --noEmit",
+    "db:migrate": "wrangler d1 execute bedrock-monitor --file=src/db/schema.sql",
+    "db:migrate:local": "wrangler d1 execute bedrock-monitor --local --file=src/db/schema.sql"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/project-bedrock-au/bedrock-business-monitor.git"
+  },
+  "author": "Project Bedrock",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241106.0",
+    "typescript": "^5.6.3",
+    "wrangler": "^4.95.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "sources": [
+    {
+      "name": "business2sell",
+      "adapter": "business2sell",
+      "baseUrl": "https://www.business2sell.com.au",
+      "searchUrl": "https://www.business2sell.com.au/businesses/sale",
+      "pollIntervalMinutes": 240,
+      "maxPages": 10,
+      "enabled": true,
+      "notes": "5797 AU listings. robots.txt explicitly allows Anthropic-AI. No bot protection. Pagination: ?page=N. Spike confirmed 2026-09-17."
+    },
+    {
+      "name": "bsale",
+      "adapter": "bsale",
+      "baseUrl": "https://bsale.com.au",
+      "searchUrl": "https://bsale.com.au/businesses-for-sale",
+      "pollIntervalMinutes": 240,
+      "maxPages": 3,
+      "enabled": true,
+      "notes": "~10,000 AU listings. No bot protection. JSON-LD ItemList on state pages. Pagination: /businesses-for-sale/{state}/page-{N}. Spike confirmed 2026-09-17."
+    }
+  ],
+  "sources_not_viable": [
+    {
+      "name": "seek_business",
+      "url": "https://www.seekbusiness.com.au",
+      "reason": "Cloudflare bot protection — HTTP 403 for all programmatic access. Not viable without bypass (prohibited by spec)."
+    },
+    {
+      "name": "businesses_for_sale_au",
+      "url": "https://australia.businessesforsale.com",
+      "reason": "Cloudflare hard block ('you have been blocked') — more aggressive than SeekBusiness. Not viable."
+    }
+  ]
+}
